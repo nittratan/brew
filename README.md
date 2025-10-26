@@ -34,4 +34,27 @@ Homebrew is an open-source package manager for macOS and Linux that allows you t
 
 ![Brew Services Status](https://raw.githubusercontent.com/nittratan/brew/master/Screenshot%202025-10-25%20at%208.38.51%E2%80%AFAM.png)
 
+### 4️⃣ Managing Services (Daemon Support)
+If a package runs as a background service (like PostgreSQL, Redis):
+| Command                           | Description                         |
+| --------------------------------- | ----------------------------------- |
+| `brew services list`              | List all services                   |
+| `brew services start <formula>`   | Start service (auto-start on login) |
+| `brew services stop <formula>`    | Stop service                        |
+| `brew services restart <formula>` | Restart service                     |
+| `brew services cleanup`           | Remove unused service plist files   |
+![Brew Command Output](https://raw.githubusercontent.com/nittratan/brew/master/Screenshot%202025-10-26%20at%207.53.58%E2%80%AFAM.png)
+
+#### Example: PostgreSQL via Brew (real use case)
+#### brew install postgresql@15
+#### brew services start postgresql@15
+#### brew info postgresql@15
+#### brew link postgresql@15 --force
+#### export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
+#### psql --version
+
+
+
+
+
 
